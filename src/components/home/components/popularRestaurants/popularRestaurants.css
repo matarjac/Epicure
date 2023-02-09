@@ -1,0 +1,25 @@
+.populars-container {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  align-items: center;
+  margin-top: 7vh;
+}
+
+.populars-container > h2 {
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 1.25px;
+}
+
+.popular-cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+#rating-image {
+  scale: 80%;
+}

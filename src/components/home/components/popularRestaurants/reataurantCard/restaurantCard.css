@@ -1,0 +1,27 @@
+#restaurant-image {
+  height: 50%;
+  width: 100%;
+}
+
+.card-container {
+  width: 35%;
+  height: 405px;
+  background-color: #f9f4ea;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  overflow: hidden;
+}
+
+#restaurant-name {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2.67px;
+}
+
+#chef-name {
+  font-weight: 200;
+  font-size: 24px;
+  letter-spacing: 1.97px;
+}
