@@ -1,0 +1,40 @@
+#about-us-section-container {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  background-color: #fafafa;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+#about-us-text-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+#about-us-title {
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 35px;
+  /* identical to box height, or 117% */
+
+  letter-spacing: 2.14px;
+  text-transform: uppercase;
+}
+
+#about-us-para {
+  max-width: 50%;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 30px;
+
+  letter-spacing: 2.14px;
+}
+
+#download-buttons-container {
+  display: flex;
+  gap: 2vw;
+}

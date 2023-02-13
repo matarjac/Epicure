@@ -1,11 +1,15 @@
 .populars-container {
-  height: 500px;
+  height: fit-content;
   width: 100vw;
   display: flex;
   flex-direction: column;
   gap: 4vh;
   align-items: center;
+
   margin-top: 7vh;
+  margin-bottom: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .populars-container > h2 {
@@ -15,11 +19,8 @@
 }
 
 .popular-cards-container {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 5%;
-}
-
-#rating-image {
-  scale: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
 }

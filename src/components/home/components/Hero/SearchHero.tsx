@@ -9,7 +9,7 @@ const SearchHero:React.FC = ()=>{
 chef restaurants in Tel Aviv</h1>
             <div id="search-input-button-pair">
                 <button id="search-button"><img src="/Assets/search-icon.svg" alt=""/></button>
-                <input id="search-hero-input" type="text" />
+                <input id="search-hero-input" placeholder="Search for restaurant cuisine, chef" type="text" />
             </div>
         </div>
     );

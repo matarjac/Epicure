@@ -1,15 +1,18 @@
 #restaurant-image {
   height: 50%;
   width: 100%;
+  object-fit: cover;
 }
 
 .card-container {
-  width: 35%;
-  height: 405px;
+  width: 379px;
+  height: 403.77px;
+  /* width: 35%;
+  height: 405px; */
   background-color: #f9f4ea;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  margin: 15px;
   align-items: center;
   overflow: hidden;
 }
@@ -24,4 +27,9 @@
   font-weight: 200;
   font-size: 24px;
   letter-spacing: 1.97px;
+}
+
+#rating-image {
+  scale: 80%;
+  z-index: 0;
 }

@@ -41,5 +41,5 @@ const PopularRestaurants: React.FC = () => {
           </div>
       );
     }
-
+    
 export default PopularRestaurants;
