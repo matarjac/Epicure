@@ -1,6 +1,6 @@
 import React from "react";
 import "./restaurantCard.css";
-import IRestaurantCard from '../../../../../types/interfaces/IRestaurantCard'
+import {IRestaurantCard} from '../../../../../types/interfaces/IRestaurantCard'
 
 
 const RestaurantCard: React.FC<IRestaurantCard> = (props:IRestaurantCard) => {

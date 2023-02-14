@@ -1,0 +1,16 @@
+#quick-filters-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.quick-filter {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.quick-filter:focus {
+  font-weight: 500;
+}

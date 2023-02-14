@@ -1,7 +1,7 @@
 import React from "react";
 import "./popularRestaurants.css";
 import RestaurantCard from "./reataurantCard/RestaurantCard";
-import IRestaurantCard from "../../../../types/interfaces/IRestaurantCard";
+import {IRestaurantCard} from "../../../../types/interfaces/IRestaurantCard";
 import data from "../../../../data.json";
 
 
