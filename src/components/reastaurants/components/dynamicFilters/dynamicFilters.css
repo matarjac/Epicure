@@ -17,3 +17,7 @@
 .dynamic-filter:focus {
   background-color: #d0cfcf;
 }
+
+.modal-button-container {
+  position: relative;
+}
