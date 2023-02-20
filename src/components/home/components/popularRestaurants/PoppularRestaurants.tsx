@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./popularRestaurants.css";
 import RestaurantCard from "./reataurantCard/RestaurantCard";
 import {IRestaurantCard} from "../../../../types/interfaces/IRestaurantCard";
@@ -9,7 +9,9 @@ import { filterRestaurants } from "../../../../store/slices/restaurantsSlice";
 const PopularRestaurants: React.FC = () => {
     const restaurantsData = useSelector((state:any)=>state.restaurants.value);
     const dispatch = useDispatch();
-    // dispatch(filterRestaurants('all'));
+    useEffect(()=>{
+        dispatch(filterRestaurants('all'));
+    }, [])
 
       return (
           <div className="populars-container">

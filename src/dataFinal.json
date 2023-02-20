@@ -10,7 +10,7 @@
             "chef": "Meir Adoni",
             "rating": 3,
             "id": 5,
-            "dishes":[1,6,34,2],
+            "dishes":[1,6,2],
             "openHour": 16,
             "closeHour": 24,
             "isPopular": true,
@@ -26,18 +26,7 @@
             "isNew": false,
             "openHour": 16,
             "closeHour": 22,
-            "dishes":
-            [
-                {
-
-                },
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            "dishes":[1,2,8]
         },
         {
             "img": "./Assets/restaurants-images/nur.jpeg",
@@ -49,18 +38,7 @@
             "isNew": true,
             "openHour": 14,
             "closeHour": 23,
-            "dishes":
-            [
-                {
-
-                },
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            "dishes":[2,3,4]
             
         },
         {
@@ -73,18 +51,7 @@
             "isNew": false,
             "openHour": 16,
             "closeHour": 23,
-            "dishes":
-            [
-                {
-
-                },
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            "dishes":[3,6,9]
         },
         {
             "img": "./Assets/restaurants-images/claro.svg",
@@ -96,18 +63,7 @@
             "isNew": false,
             "openHour": 11,
             "closeHour": 22,
-            "dishes":
-            [
-                {
-
-                },
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            "dishes": [1,2,8]
         },
         {
             "img": "https://img.mako.co.il/2021/03/04/salat_autoOrient_i.jpg",
@@ -119,18 +75,7 @@
             "isNew": false,
             "openHour": 11,
             "closeHour": 22,
-            "dishes":
-            [
-                {
-
-                },
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            "dishes": [3,4,6]
         }
     ],
 
@@ -218,7 +163,46 @@
             "name": "kuskus",
             "id": 1,
             "ingredients": "kuskus, water",
-            "type": ["spicy"]
+            "foodType": ["spicy"],
+            "img": "",
+            "price": 65,
+            "isPopular": false
+        },
+        {
+            "name": "Pad Ki Mao",
+            "id": 2,
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "foodType": ["spicy", "Vegetarian"],
+            "img": "./Assets/dishes/pad.svg",
+            "price": 75,
+            "isPopular": true
+        },
+        {
+            "name": "Garbanzo Frito",
+            "id": 3,
+            "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
+            "foodType": ["spicy"],
+            "img": "./Assets/dishes/garbanzo.svg",
+            "price": 60,
+            "isPopular": true
+        },
+        {
+            "name": "Smoked Pizza",
+            "id": 4,
+            "ingredients": "Basil dough, cashew 'butter', demi-glace,bison & radish",
+            "foodType": ["vegan"],
+            "img": "./Assets/dishes/pizza.svg",
+            "price": 45,
+            "isPopular": true
+        },
+        {
+            "name": "kuskus",
+            "id": 5,
+            "ingredients": "kuskus, water",
+            "foodType": ["spicy"],
+            "img": "./Assets/dishes/pizza.svg",
+            "price": 45,
+            "isPopular": false
         }
     ]
 }

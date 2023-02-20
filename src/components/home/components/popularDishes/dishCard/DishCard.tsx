@@ -1,6 +1,7 @@
 import React from "react";
 import "./dishCard.css";
 import IDishCard from '../../../../../types/interfaces/IDishCard'
+import FoodType from "../../../../../types/interfaces/FoodType";
 
 
 const DishCard: React.FC<IDishCard> = (props:IDishCard) => {
@@ -11,8 +12,8 @@ const DishCard: React.FC<IDishCard> = (props:IDishCard) => {
               <span id="dish-name">{data.name}</span>
               <div id="food-type-icons-container">
 
-              {props.foodType.map((type)=>{
-                  return <img id="type" src={type} alt="" />
+              {data.foodType.map((type:string)=>{
+                  return <img id="type" src={"./Assets/food-type/"+type+"-icon.svg"} alt="" />
               })}
               </div>
               <span id="dish-ingredients">{data.ingredients}</span>
