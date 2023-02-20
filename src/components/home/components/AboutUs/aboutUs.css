@@ -25,7 +25,7 @@
 }
 
 #about-us-para {
-  max-width: 50%;
+  max-width: 60%;
   font-style: normal;
   font-weight: 200;
   font-size: 20px;
@@ -36,5 +36,19 @@
 
 #download-buttons-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2vw;
+}
+
+@media screen and (max-width: 750px) {
+  #about-us-section-container {
+    flex-direction: column;
+  }
+  #logo {
+    scale: 50%;
+  }
+
+  #about-us-para {
+    max-width: 100%;
+  }
 }

@@ -3,7 +3,7 @@ import "./modalRating.css";
 
 const ModalRating = ()=>{
     return (
-        <div className="modal-div-container">
+        <div id="rating-modal" className="modal-div-container">
             <span className="modal-title">Rating</span>
             <div className="rating-option">
                 <input type="checkbox" id="rating1" name="rating1" value="1"/>

@@ -12,7 +12,7 @@ import Footer from "./components/footer/Footer";
 
 const Home:React.FC = ()=>{
     return(
-        <div>
+        <div id="homePage">
             <Navbar/>
             <Hero/>
             <PopularRestaurants/>

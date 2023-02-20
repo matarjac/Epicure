@@ -26,6 +26,12 @@ const Navbar:React.FC = ()=>{
                         <button className="navbar-button" id=""><img src="/Assets/cart-icon.svg" alt="" /></button>
                     </div>
                 </div>
+                <button id="humburger-menu">
+                    <img src="./Assets/HAMBUR.svg" alt="" />
+                </button>
+            </div>
+            <div id="buttons-side-menu">
+
             </div>
         </nav>
     );
