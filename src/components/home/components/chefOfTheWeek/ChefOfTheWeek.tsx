@@ -29,7 +29,7 @@ const ChefOfTheWeek: React.FC = ()=>{
                 </div>
                 <p>Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.</p>
             </div>
-            <p className="chef-of-the-week-titles chefs-restaurants-title">{chefData[0].name}’s Restaurants</p>
+            <p className="chef-of-the-week-titles chefs-restaurants-title">{chefOfTheWeek.name}’s Restaurants</p>
             <div id="chefs-restaurants">
                 {restaurantsData.slice(0,3).map((rest:IRestaurantCard)=>(
                     <div className="week-restaurant-card">
