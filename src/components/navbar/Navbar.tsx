@@ -30,7 +30,6 @@ const Navbar:React.FC = ()=>{
                 </button>
             </div>
             <div id="buttons-side-menu">
-
             </div>
         </nav>
     );

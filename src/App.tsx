@@ -5,6 +5,8 @@ import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import Chefs from './components/chefs/Chefs';
 import Restaurants from './components/reastaurants/Restaurants';
+import RestaurantPage from './components/reastaurants/components/restaurantsPage/RestaurantPage';
+import { idText } from 'typescript';
 
 
 
@@ -15,6 +17,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/chefs' element={<Chefs/>}/>
         <Route path='/restaurants' element={<Restaurants/>}/>
+        <Route path='/restaurants/:id' element={<RestaurantPage/>}/>
       </Routes>
     </BrowserRouter>
   );

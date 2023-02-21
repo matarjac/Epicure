@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./modalPriceRange.css";
 
-
 const ModalPriceRange:React.FC = ()=>{
     const [minPrice, setMinPrice] = useState<string>("12");
     return(

@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { time } from "console";
-import { stat } from "fs";
 import finalData from "../../dataFinal.json"
 
 export const restaurantsSlice = createSlice({
@@ -39,7 +37,7 @@ export const restaurantsSlice = createSlice({
                 case "chef of the week":
                     state.value = finalData.restaurants;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.id == state.chefOfTheWeek
+                        (restaurant) => restaurant.chefID == state.chefOfTheWeek
                     );
                     break;
                 default:

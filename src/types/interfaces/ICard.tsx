@@ -1,10 +1,10 @@
-export interface IRestaurantCard {
+export interface ICard {
     img: string,
     name: string,
     chef?: string,
     rating: number,
     id?: number,
-    chefID?:number,
+    location: string,
     isPopular?: boolean,
     isNew?: boolean,
     dishes?: number[],
@@ -12,4 +12,4 @@ export interface IRestaurantCard {
     closeHour?: 24
 }
 
-export default IRestaurantCard;
+export default ICard;
