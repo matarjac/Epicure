@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const ModalDistance = ()=>{
-    const [distanceValue, setDistanceValue] = useState("2")
+const ModalDistance: React.FC = ()=>{
+    const [distanceValue, setDistanceValue] = useState<string>("2")
     return (
         <div className="modal-div-container">
             <span className="modal-title">Distance</span>

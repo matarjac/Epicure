@@ -28,7 +28,6 @@
   display: inline;
   width: 100%;
   max-height: 400px;
-  /* height: 255px; */
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 200;
@@ -36,8 +35,6 @@
   line-height: 35px;
   padding: 5%;
   height: fit-content;
-  /* or 146% */
-
   text-align: justify;
   letter-spacing: 1.25px;
 }
@@ -99,8 +96,6 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 47px;
-  /* or 157% */
-
   text-align: center;
   letter-spacing: 2.67px;
 }

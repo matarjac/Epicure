@@ -2,44 +2,17 @@ import React, { useEffect } from "react";
 import "./popularDishes.css";
 import DishCard from "./dishCard/DishCard";
 import IDishCard from "../../../../types/interfaces/IDishCard";
-import data from "../../../../data.json";
-import FoodType from "../../../../types/interfaces/FoodType";
 import { useSelector,useDispatch } from "react-redux";
 import { filterDishes } from "../../../../store/slices/dishesSlice";
+import { Istore } from "../../../../types/interfaces/Istore";
 
 
 const PopularDishes: React.FC = () => {
-    const dishesToRender = useSelector((state:any)=>state.dishes.value)
+    const dishesToRender = useSelector((state:Istore)=>state.dishes.value)
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(filterDishes('popular'));
     },[])
-    // const dishesToRender:IDishCard[] = 
-    // [
-    //     {
-    //         "img": "./Assets/dishes/pad.svg",
-    //         "name": "Pad Ki Mao",
-    //         "foodType": [FoodType.spicy, FoodType.vegan],
-    //         "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
-    //         "price": 60
-    //     },
-    //     {
-    //         "img": "./Assets/dishes/garbanzo.svg",
-    //         "name": "Garbanzo Frito",
-    //         "foodType": [],
-    //         "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
-    //         "price": 55
-    //     },
-    //     {
-    //         "img": "./Assets/dishes/pizza.svg",
-    //         "name": "Smoked Pizza",
-    //         "foodType": [FoodType.vegitarian],
-    //         "ingredients": "Basil dough, cashew 'butter', demi-glace,bison & radish",
-    //         "price": 80
-    //     }
-
-    // ]
-    console.log(dishesToRender);
 
       return (
           <div className="populars-container">

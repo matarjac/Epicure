@@ -4,10 +4,11 @@ import RestaurantCard from "./reataurantCard/RestaurantCard";
 import {IRestaurantCard} from "../../../../types/interfaces/IRestaurantCard";
 import { useSelector,useDispatch } from "react-redux";
 import { filterRestaurants } from "../../../../store/slices/restaurantsSlice";
+import { Istore } from "../../../../types/interfaces/Istore";
 
 
 const PopularRestaurants: React.FC = () => {
-    const restaurantsData = useSelector((state:any)=>state.restaurants.value);
+    const restaurantsData = useSelector((state:Istore)=>state.restaurants.value);
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(filterRestaurants('all'));

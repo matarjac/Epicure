@@ -6,7 +6,7 @@ import {filterRestaurants} from "../../../../store/slices/restaurantsSlice"
 
 const QuickFilters:React.FC = ()=>{
 
-    const [filter, setFilter] = useState('all');
+    const [filter, setFilter] = useState<string>('all');
     const dispatch = useDispatch();
     dispatch(filterRestaurants(filter));
 

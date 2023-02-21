@@ -11,9 +11,7 @@ const RestaurantCard: React.FC<IRestaurantCard> = (props:IRestaurantCard) => {
               <img id="restaurant-image" src={data.img} alt="" />
               <span id="restaurant-name">{data.name}</span>
               <span id="chef-name">{data.chef}</span>
-              {/* <div id="ratings"> */}
               <img id="rating-image" src={`./Assets/ratings/${data.rating}-rating.svg`} alt="" />
-              {/* </div> */}
           </div>
 
       )

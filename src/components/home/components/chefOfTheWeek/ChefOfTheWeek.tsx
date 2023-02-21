@@ -5,27 +5,27 @@ import {filterRestaurants} from "../../../../store/slices/restaurantsSlice";
 import { useEffect } from "react";
 import { filterChefs } from "../../../../store/slices/chefsSlice";
 import IRestaurantCard from "../../../../types/interfaces/IRestaurantCard";
+import { Istore } from "../../../../types/interfaces/Istore";
 
 const ChefOfTheWeek: React.FC = ()=>{
     const dispatch = useDispatch();
-    const restaurantsData = useSelector((state:any)=> state.restaurants.value);
-    const chefData = useSelector((state:any) => state.chefs.value);
+    const restaurantsData = useSelector((state:Istore)=> state.restaurants.value);
+    const chefData = useSelector((state:Istore) => state.chefs.value);
 
     useEffect(()=>{
-        dispatch(filterRestaurants("chef of the week"));
-        dispatch(filterChefs("chef of the week"));
-
+        const chefOfTheWeekAction = "chef of the week"
+        dispatch(filterRestaurants(chefOfTheWeekAction));
+        dispatch(filterChefs(chefOfTheWeekAction));
     },[])
+    const chefOfTheWeek = chefData[0];
 
-
-    // restaurantsData.filter((rest:IRestaurantCard)=> rest.id === chefData[0].id);
     return (
         <div id="chef-of-the-week-section">
             <p className="chef-of-the-week-titles">Chef of the week:</p>
             <div id="chefs-description">
                 <div id="chef-image-container">
-                    <img src={chefData[0].img} alt="" />
-                    <span>{chefData[0].name}</span>
+                    <img src={chefOfTheWeek.img} alt="" />
+                    <span>{chefOfTheWeek.name}</span>
                 </div>
                 <p>Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.</p>
             </div>

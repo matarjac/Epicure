@@ -13,11 +13,6 @@
   transform: translate(-50%, 0);
 }
 
-/* #price-modal {
-  left: 50%;
-  transform: translate(-50%, 0);
-} */
-
 .modal-title {
   font-family: "Helvetica Neue";
   font-style: normal;
@@ -25,7 +20,6 @@
   font-size: 18px;
   line-height: 21px;
   letter-spacing: 1.92px;
-
   color: #000000;
 }
 
@@ -35,12 +29,9 @@
   font-weight: 200;
   font-size: 14px;
   line-height: 20px;
-  /* or 143% */
-
   display: flex;
   align-items: center;
   letter-spacing: 1.97px;
-
   color: #000000;
 }
 
