@@ -8,8 +8,8 @@ export interface IRestaurantCard {
     isPopular?: boolean,
     isNew?: boolean,
     dishes?: number[],
-    openHour?: 16,
-    closeHour?: 24
+    openHour: number,
+    closeHour?: number
 }
 
 export default IRestaurantCard;

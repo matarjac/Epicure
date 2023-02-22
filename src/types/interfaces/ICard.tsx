@@ -9,7 +9,9 @@ export interface ICard {
     isNew?: boolean,
     dishes?: number[],
     openHour?: 16,
-    closeHour?: 24
+    closeHour?: 24,
+    foodType?:string[]
+    onClick?: void
 }
 
 export default ICard;

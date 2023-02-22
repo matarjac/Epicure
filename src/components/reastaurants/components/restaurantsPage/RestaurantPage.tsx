@@ -1,51 +1,80 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../../navbar/Navbar";
-// import HeroRestaurantPage from "./hero/HeroRestaurantPage";
 import { useSelector } from "react-redux";
 import { Istore } from "../../../../types/interfaces/Istore";
 import { useDispatch } from "react-redux";
 import { filterRestaurants } from "../../../../store/slices/restaurantsSlice";
-import IRestaurantCard from "../../../../types/interfaces/IRestaurantCard";
 import "./restaurantPage.css";
-import { current } from "@reduxjs/toolkit";
 import Footer from "../../../home/components/footer/Footer";
-
+import { filterDishes } from "../../../../store/slices/dishesSlice";
+import DishMenuCard from "./dishes/DishMenuCard";
+import IDishCard from "../../../../types/interfaces/IDishCard";
+import ICard from "../../../../types/interfaces/ICard";
+import ModalDishBox from "./dishes/ModalDishBox/ModalDishBox";
 
 const RestaurantPage: React.FC = ()=>{
     const { id } = useParams();
-    // const dispatch = useDispatch();
     const restaurantsData = useSelector((state:Istore)=>state.restaurants.value);
+    const dishesData = useSelector((state:Istore)=>state.dishes.value);
     const dispatch = useDispatch();
+    const now = new Date();
+    const currentHour = now.getHours(); 
+
     useEffect(()=>{
         dispatch(filterRestaurants('all'));
+        dispatch(filterDishes('all'));
+
     }, [])
     const currentRest = restaurantsData.filter((rest)=>rest.id==id)[0];
-    console.log(currentRest);
-    // useEffect(()=>{
-    //     dispatch(filterRestaurants('all'));
-    // },[]);
+    const currentDishes = dishesData.filter((dish)=>dish.restaurantID==id);
+    const openningHour: number | undefined = currentRest.openHour;
+    const isOpen: string = currentHour>=openningHour ? "Open now" : "Close";
+
+    const handleFilter = (category:string)=>{
+        dispatch(filterDishes(category));
+    }
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleModal = ()=>{
+        setIsModalOpen(true)
+    }
 
     return(
-
-        <div className="restaurant-page">
+        <>
             <Navbar/>
-            <div id="restaurant-details-hero">
-                <img id="rest-hero-img" src={currentRest.img} alt="" />
-                <h1>{currentRest.name}</h1>
-                <span>{currentRest.chef}</span>
-                <span>{currentRest.openHour}</span>
-            </div>
-            <div className="dishes-category-buttons-container">
-                <button>Breakfast</button>
-                <button>Launch</button>
-                <button>Dinner</button>
-            </div>
-            <div>
-                {/* Render dishes */}
-            </div>
+                <div className="restaurant-page">
+                    <div id="restaurant-details-hero">
+                        <img id="rest-hero-img" src={currentRest.img} alt="" />
+                        <h1 id="restaurant-page-name">{currentRest.name}</h1>
+                        <span id="chef-name">{currentRest.chef}</span>
+                        <span id="open-status"><img src="../Assets/clock.svg" alt="" />{isOpen}</span>
+                    </div>
+                    <div id="dishes-category-buttons-container">
+                        <button className="dishes-category" onClick={()=>handleFilter("breakfast")}>Breakfast</button>
+                        <button className="dishes-category" onClick={()=>handleFilter("launch")}>Launch</button>
+                        <button className="dishes-category" onClick={()=>handleFilter("dinner")}>Dinner</button>
+                    </div>
+                <div id="dishes-menu-cards-container">
+                    {currentDishes.length>=1 ? currentDishes.map((dish:IDishCard)=>(
+                        <DishMenuCard 
+                        name={dish.name}
+                        img={dish.img}
+                        ingredients = {dish.ingredients}
+                        foodType={dish.foodType}
+                        price={dish.price}
+                        onClick={handleModal}/>
+                    ))
+                    :"No available dishes"}
+
+                </div>
+                <div>
+                    {isModalOpen&&<ModalDishBox/>}
+                </div>
+                </div>
             <Footer/>
-        </div>
+        </>
     )
 }
 
