@@ -36,9 +36,12 @@ const RestaurantPage: React.FC = ()=>{
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalIDDish, setModalIDDish] = useState<number>(0);
 
-    const handleModal = ()=>{
+    const handleModal = (id:number)=>{
+        setModalIDDish(id);
         setIsModalOpen(true)
+        console.log(modalIDDish);
     }
 
     return(
@@ -64,13 +67,13 @@ const RestaurantPage: React.FC = ()=>{
                         ingredients = {dish.ingredients}
                         foodType={dish.foodType}
                         price={dish.price}
-                        onClick={handleModal}/>
+                        id={dish.id}
+                        onClick={()=>handleModal(dish.id)}/>
                     ))
                     :"No available dishes"}
-
                 </div>
                 <div>
-                    {isModalOpen&&<ModalDishBox/>}
+                    {isModalOpen&&<ModalDishBox id={modalIDDish} isOpen={isModalOpen}/>}
                 </div>
                 </div>
             <Footer/>

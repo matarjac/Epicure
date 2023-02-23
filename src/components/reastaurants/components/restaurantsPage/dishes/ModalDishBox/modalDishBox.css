@@ -11,16 +11,108 @@
 }
 
 .modal-dish-box-container {
-  background-color: black;
   background-color: #fefefe;
-  /* margin: 100px auto; 15% from the top and centered */
-  padding: 20px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid #888;
   width: 40%;
   height: 80%;
   overflow: auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+#modal-dish-popup-details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#modal-dish-popup-details-section > img.dish-popup-image {
+  width: 100%;
+  object-fit: cover;
+  height: 292px;
+}
+
+.icon-foodtype-dish-popup {
+  width: 40px;
+  height: 30px;
+}
+
+#dish-popup-ingredients {
+  width: 232px;
+  /* height: 70px; */
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 1.97px;
+}
+
+#price-span-modal {
+  background-color: white;
+}
+
+#price-container-dish-popup {
+  width: 40%;
+  margin-top: 10px;
+}
+
+.modal-dish-popup-user-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.modal-dish-popup-user-actions > span {
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 1.97px;
+  border-bottom: 1px #de9200e5 solid;
+  padding-bottom: 5px;
+}
+
+#quantity-buttons-container {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+#quantity-buttons-container > span {
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 1.97px;
+}
+
+#add-to-bag-btn {
+  box-sizing: border-box;
+  padding: 5px 24px;
+  width: 206px;
+  height: 48px;
+  background: #000000;
+  border: 1px solid #000000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 30px 0;
+}
+
+.dish-popup-input {
+  margin-right: 10px;
 }

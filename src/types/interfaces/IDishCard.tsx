@@ -3,7 +3,7 @@ import FoodType from './FoodType'
 interface IDishCard{
     name: string,
     restaurantID?: number,
-    id?: number,
+    id: number,
     ingredients: string,
     foodType: string[],
     img: string,

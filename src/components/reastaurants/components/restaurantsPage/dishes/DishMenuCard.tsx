@@ -10,7 +10,7 @@ const DishMenuCard: React.FC<IDishCard> = (props:IDishCard)=>{
             <img src={props.img} alt="" />
             <span id="dish-menu-card-title">{props.name}</span>
             <span id="dish-menu-card-ingredients">{props.ingredients}</span>
-            <div id="price-container">
+            <div className="price-container">
                 <span>₪{props.price}</span>
             </div>
         </div>

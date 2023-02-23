@@ -33,14 +33,14 @@
   letter-spacing: 1.97px;
 }
 
-#price-container {
+.price-container {
   height: 1px;
   background-color: #979797;
   width: 80%;
   position: relative;
 }
 
-#price-container > span {
+.price-container > span {
   position: absolute;
   background-color: #f9f4ea;
   padding: 5px;
