@@ -7,6 +7,8 @@ import Chefs from './components/chefs/Chefs';
 import Restaurants from './components/reastaurants/Restaurants';
 import RestaurantPage from './components/reastaurants/components/restaurantsPage/RestaurantPage';
 import { idText } from 'typescript';
+import SignInPage from './components/signIn/SignInPage';
+import SignUpPage from "./components/signUp/SignUpPage";
 
 
 
@@ -18,6 +20,8 @@ function App() {
         <Route path='/chefs' element={<Chefs/>}/>
         <Route path='/restaurants' element={<Restaurants/>}/>
         <Route path='/restaurants/:id' element={<RestaurantPage/>}/>
+        <Route path='/sign-in' element={<SignInPage/>}/>
+        <Route path='/sign-up' element={<SignUpPage/>}/>
       </Routes>
     </BrowserRouter>
   );

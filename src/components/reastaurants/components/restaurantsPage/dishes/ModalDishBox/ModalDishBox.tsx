@@ -15,6 +15,8 @@ const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
     const dispatch = useDispatch();
     const dishesData = useSelector((state:Istore)=> state.dishes.value);
     const [dishQuantity, setDishQuantity] = useState(1);
+    const [isModalOpen, setIsModalOpen] = useState(props.isOpen);
+
     useEffect(()=>{
         dispatch(filterDishes('all'));
     }, [])
@@ -30,12 +32,18 @@ const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
 
         }
     }
+
+    const handleCloseBtn = ()=>{
+        setIsModalOpen(false);
+    }
     const dishData = dishesData.filter((dish)=>dish.id===props.id)[0];
 
     return(
-        // <>
-        // {props.isOpen&&
+        <>
+        {isModalOpen&&
         <div className="modal-background">
+            <div id="close-btn-container">
+                <button id="close-btn" onClick={handleCloseBtn}><img src="../Assets/close-btn.svg" alt="" /></button>
             <div className="modal-dish-box-container">
                 <div id="modal-dish-popup-details-section">
                     <img className="dish-popup-image" src={dishData.img} alt="" />
@@ -71,9 +79,10 @@ const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
                 </div>
                 <button id="add-to-bag-btn">add to bag</button>
             </div>
+            </div>
         </div>
-// }
-//         </>
+}
+         </>
     )
 } 
 

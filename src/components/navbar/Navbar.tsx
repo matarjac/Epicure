@@ -21,7 +21,8 @@ const Navbar:React.FC = ()=>{
                         <form action="">
                             <input id="navbar-input" type="text" placeholder="Search for restaurant cuisine, chef" />
                         </form>
-                        <button className="navbar-button" id=""><img src="/Assets/account-icon.svg" alt="" /></button>
+                        <button className="navbar-button" id=""
+                        onClick={()=>{navigation("/sign-in");}}><img src="/Assets/account-icon.svg" alt="" /></button>
                         <button className="navbar-button" id=""><img src="/Assets/cart-icon.svg" alt="" /></button>
                     </div>
                 </div>

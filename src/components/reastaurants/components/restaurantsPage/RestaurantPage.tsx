@@ -73,7 +73,7 @@ const RestaurantPage: React.FC = ()=>{
                     :"No available dishes"}
                 </div>
                 <div>
-                    {isModalOpen&&<ModalDishBox id={modalIDDish} isOpen={isModalOpen}/>}
+                    {<ModalDishBox id={modalIDDish} isOpen={isModalOpen}/>}
                 </div>
                 </div>
             <Footer/>
