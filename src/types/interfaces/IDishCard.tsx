@@ -2,12 +2,14 @@ import FoodType from './FoodType'
 
 interface IDishCard{
     name: string,
-    id?: number,
+    restaurantID?: number,
+    id: number,
     ingredients: string,
     foodType: string[],
     img: string,
     price?: number,
-    isPopular?: boolean
+    isPopular?: boolean,
+    onClick: ()=>void
 }
 
 export default IDishCard;

@@ -5,35 +5,38 @@
     [
         
         {
-            "img": "./Assets/restaurants-images/luciano.jpeg",
+            "img": "https://images.unsplash.com/photo-1611765083444-a3ce30f1c885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
             "name": "Luchiano",
+            "id": 1,
             "chef": "Meir Adoni",
             "rating": 3,
-            "id": 5,
+            "chefID": 5,
             "dishes":[1,6,2],
-            "openHour": 16,
+            "openHour": 10,
             "closeHour": 24,
             "isPopular": true,
             "isNew": false
         },
         {
-            "img": "./Assets/restaurants-images/tiger-lily.svg",
+            "img": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
             "name": "Hasalon",
+            "id": 2,
             "chef": "Eyal Shani",
             "rating": 5,
-            "id": 2,
+            "chefID": 2,
             "isPopular": true,
             "isNew": false,
-            "openHour": 16,
+            "openHour": 11,
             "closeHour": 22,
             "dishes":[1,2,8]
         },
         {
-            "img": "./Assets/restaurants-images/nur.jpeg",
+            "img": "https://imageproxy.wolt.com/venue/5e6905a759fe70f82a8016ef/8f18b1a8-63ae-11ea-980e-0a58647cdb07_yaelitz-14.jpg",
             "name": "Hamiznon",
+            "id": 3,
             "chef": "Eyal Shani",
             "rating": 4,
-            "id": 2,
+            "chefID": 2,
             "isPopular": false,
             "isNew": true,
             "openHour": 14,
@@ -42,11 +45,12 @@
             
         },
         {
-            "img": "./Assets/restaurants-images/luciano.jpeg",
+            "img": "https://www.mashya.co.il/wp-content/uploads/2021/08/KARELA-5-scaled.jpg",
             "name": "Mashya",
+            "id": 4,
             "chef": "Yossi Shitrit",
             "rating": 3,
-            "id": 5,
+            "chefID": 5,
             "isPopular": false,
             "isNew": false,
             "openHour": 16,
@@ -54,11 +58,12 @@
             "dishes":[3,6,9]
         },
         {
-            "img": "./Assets/restaurants-images/claro.svg",
+            "img": "https://res.cloudinary.com/dqdq2mu2e/image/upload/v1/assafgranit/restaurants/mahne_bg_3x.jpg?v=08-03-2020",
             "name": "Shabur",
+            "id": 5,
             "chef": "Assaf Granit",
             "rating": 5,
-            "id": 1,
+            "chefID": 1,
             "isPopular": true,
             "isNew": false,
             "openHour": 11,
@@ -67,10 +72,11 @@
         },
         {
             "img": "https://img.mako.co.il/2021/03/04/salat_autoOrient_i.jpg",
+            "id": 6,
             "name": "Mahne Yehuda",
             "chef": "Assaf Granit",
             "rating": 5,
-            "id": 1,
+            "chefID": 1,
             "isPopular": false,
             "isNew": false,
             "openHour": 11,
@@ -160,49 +166,114 @@
     "dishes":
     [
         {
-            "name": "kuskus",
+            "name": "Pasta",
+            "restaurantID": 1,
             "id": 1,
             "ingredients": "kuskus, water",
             "foodType": ["spicy"],
-            "img": "",
+            "img": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80",
             "price": 65,
-            "isPopular": false
+            "isPopular": false,
+            "category": "launch"
         },
         {
             "name": "Pad Ki Mao",
+            "restaurantID": 2,
             "id": 2,
             "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
             "foodType": ["spicy", "Vegetarian"],
-            "img": "./Assets/dishes/pad.svg",
+            "img": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "price": 75,
-            "isPopular": true
+            "isPopular": true,
+            "category": "launch"
         },
         {
             "name": "Garbanzo Frito",
+            "restaurantID": 2,
             "id": 3,
             "ingredients": "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
             "foodType": ["spicy"],
-            "img": "./Assets/dishes/garbanzo.svg",
+            "img": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "price": 60,
-            "isPopular": true
+            "isPopular": true,
+            "category": "launch"
         },
         {
             "name": "Smoked Pizza",
+            "restaurantID": 2,
             "id": 4,
             "ingredients": "Basil dough, cashew 'butter', demi-glace,bison & radish",
             "foodType": ["vegan"],
-            "img": "./Assets/dishes/pizza.svg",
+            "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "price": 45,
-            "isPopular": true
+            "isPopular": true,
+            "category": "launch"
         },
         {
             "name": "kuskus",
+            "restaurantID": 2,
             "id": 5,
             "ingredients": "kuskus, water",
             "foodType": ["spicy"],
-            "img": "./Assets/dishes/pizza.svg",
+            "img": "https://images.unsplash.com/photo-1610657592176-23d38cb78116?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
             "price": 45,
-            "isPopular": false
+            "isPopular": false,
+            "category": "breakfast"
+        },
+        {
+            "name": "Smoked Pizza",
+            "restaurantID": 2,
+            "id": 6,
+            "ingredients": "Basil dough, cashew 'butter', demi-glace,bison & radish",
+            "foodType": ["vegan"],
+            "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "price": 45,
+            "isPopular": true,
+            "category": "dinner"
+        },
+        {
+            "name": "kuskus",
+            "restaurantID": 2,
+            "id": 7,
+            "ingredients": "kuskus, water",
+            "foodType": ["spicy"],
+            "img": "https://images.unsplash.com/photo-1610657592176-23d38cb78116?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "price": 45,
+            "isPopular": false,
+            "category": "dinner"
+        },
+        {
+            "name": "Smoked Pizza",
+            "restaurantID": 2,
+            "id": 8,
+            "ingredients": "Basil dough, cashew 'butter', demi-glace,bison & radish",
+            "foodType": ["vegan"],
+            "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "price": 45,
+            "isPopular": true,
+            "category": "dinner"
+        },
+        {
+            "name": "kuskus",
+            "restaurantID": 2,
+            "id": 9,
+            "ingredients": "kuskus, water",
+            "foodType": ["spicy"],
+            "img": "https://images.unsplash.com/photo-1610657592176-23d38cb78116?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+            "price": 45,
+            "isPopular": false,
+            "category": "dinner"
+        },
+        {
+            "name": "CornFlakes",
+            "restaurantID": 2,
+            "id": 10,
+            "ingredients": "corn, milk",
+            "foodType": ["spicy"],
+            "img": "https://images.unsplash.com/photo-1588710920403-dacfbae1a640?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+            "price": 45,
+            "isPopular": false,
+            "category": "breakfast"
         }
     ]
 }

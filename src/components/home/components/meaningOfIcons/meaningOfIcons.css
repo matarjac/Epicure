@@ -12,17 +12,14 @@
 #icons-section-container > h2 {
   width: 100%;
   height: 35px;
-
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 200;
   font-size: 30px;
   line-height: 35px;
-
   text-align: center;
   letter-spacing: 2.14px;
   text-transform: uppercase;
-
   color: #000000;
 }
 

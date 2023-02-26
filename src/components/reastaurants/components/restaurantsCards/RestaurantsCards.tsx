@@ -4,6 +4,7 @@ import RestaurantCard from "../../../home/components/popularRestaurants/reataura
 import "./restaurantsCards.css";
 import {useSelector} from 'react-redux';
 import { Istore } from "../../../../types/interfaces/Istore";
+import { useNavigate } from "react-router-dom";
 
 
 const RestaurantsCards:React.FC = ()=>{
@@ -17,7 +18,10 @@ const RestaurantsCards:React.FC = ()=>{
                 name={rest.name}
                 img= {rest.img}
                 chef= {rest.name}
-                rating= {rest.rating} />
+                rating= {rest.rating}
+                id = {rest.id}
+                location = ""
+                />
             ))}
         </div>
     );

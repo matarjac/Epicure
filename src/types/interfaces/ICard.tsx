@@ -1,15 +1,17 @@
-export interface IRestaurantCard {
+export interface ICard {
     img: string,
     name: string,
     chef?: string,
     rating: number,
     id?: number,
-    chefID?:number,
+    location: string,
     isPopular?: boolean,
     isNew?: boolean,
     dishes?: number[],
-    openHour: number,
-    closeHour?: number
+    openHour?: 16,
+    closeHour?: 24,
+    foodType?:string[]
+    onClick?: void
 }
 
-export default IRestaurantCard;
+export default ICard;
