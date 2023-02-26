@@ -7,7 +7,8 @@ import { Istore } from "../../../../../../types/interfaces/Istore";
 
 interface IModalProps{
     id:number,
-    isOpen:boolean
+    isOpen:boolean,
+    onClose: () => void
 }
 
 const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
@@ -15,12 +16,13 @@ const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
     const dispatch = useDispatch();
     const dishesData = useSelector((state:Istore)=> state.dishes.value);
     const [dishQuantity, setDishQuantity] = useState(1);
-    const [isModalOpen, setIsModalOpen] = useState(props.isOpen);
+    // const [isModalOpen, setIsModalOpen] = useState(props.isOpen);
 
     useEffect(()=>{
         dispatch(filterDishes('all'));
     }, [])
-
+    
+    console.log(props.isOpen);
     const increaseQuantity = ()=>{
         setDishQuantity(dishQuantity+1)
     }
@@ -33,17 +35,17 @@ const ModalDishBox: React.FC<IModalProps> = (props:IModalProps)=>{
         }
     }
 
-    const handleCloseBtn = ()=>{
-        setIsModalOpen(false);
-    }
+    // const handleCloseBtn = ()=>{
+    //     setIsModalOpen(false);
+    // }
     const dishData = dishesData.filter((dish)=>dish.id===props.id)[0];
 
     return(
         <>
-        {isModalOpen&&
+        {props.isOpen&&
         <div className="modal-background">
             <div id="close-btn-container">
-                <button id="close-btn" onClick={handleCloseBtn}><img src="../Assets/close-btn.svg" alt="" /></button>
+                <button id="close-btn" onClick={props.onClose}><img src="../Assets/close-btn.svg" alt="" /></button>
             <div className="modal-dish-box-container">
                 <div id="modal-dish-popup-details-section">
                     <img className="dish-popup-image" src={dishData.img} alt="" />
