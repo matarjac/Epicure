@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import Chefs from './components/chefs/Chefs';
 import Restaurants from './components/reastaurants/Restaurants';
 import RestaurantPage from './components/reastaurants/components/restaurantsPage/RestaurantPage';
-import { idText } from 'typescript';
 import SignInPage from './components/signIn/SignInPage';
 import SignUpPage from "./components/signUp/SignUpPage";
 
