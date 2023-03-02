@@ -42,7 +42,6 @@ const RestaurantPage: React.FC = ()=>{
         setModalIDDish(id);
         setIsModalOpen(true);
         console.log(modalIDDish);
-        // console.log(isModalOpen);
     }
 
     return(

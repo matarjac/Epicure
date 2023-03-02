@@ -22,6 +22,7 @@ const PopularRestaurants: React.FC = () => {
                     return <RestaurantCard img={item.img} name={item.name} chef={item.chef} rating={item.rating} location="/restaurants/" id={item.id}/>
                 })}
                 </div>
+                <button id="all-restaurants-btn">All Restaurants {'>>'}</button>
           </div>
       );
     }
