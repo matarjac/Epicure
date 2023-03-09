@@ -3,7 +3,8 @@ interface IChefCard{
     id?: number,
     isChefOfTheWeek?: boolean,
     img: string,
-    isNew?: boolean
+    isNew?: boolean,
+    mostViewed?:boolean
 }
 
 export default IChefCard;

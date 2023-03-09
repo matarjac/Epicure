@@ -8,6 +8,7 @@ const dbName = 'Epicure';
 export const connectToDB = async () => {
     try {
         await connect(`${uri}${dbName}`);
+        console.log('connected');
     }
     catch (err) {
         console.log(err);

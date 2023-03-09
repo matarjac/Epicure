@@ -9,7 +9,7 @@ export interface IRestaurantCard {
     isNew?: boolean,
     dishes?: number[],
     openHour: number,
-    closeHour?: number
+    closeHour: number
 }
 
 export default IRestaurantCard;

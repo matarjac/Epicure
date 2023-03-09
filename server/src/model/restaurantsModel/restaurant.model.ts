@@ -9,10 +9,10 @@ export interface IRestaurant {
     id?: number,
     chefID?: number,
     isPopular?: boolean,
-    isNew?: boolean,
+    New?: boolean,
     dishes?: number[],
     openHour: number,
-    closeHour?: number
+    closeHour: number
 }
 
 export const restaurantSchema = new Schema<IRestaurant>({
@@ -23,10 +23,10 @@ export const restaurantSchema = new Schema<IRestaurant>({
     id: { type: Number, require: false },
     chefID: { type: Number, require: false },
     isPopular: { type: Boolean, require: false },
-    isNew: { type: Boolean, require: false },
+    New: { type: Boolean, require: false },
     dishes: { type: [Number], require: false },
     openHour: { type: Number, require: true },
-    closeHour: { type: Number, require: false }
+    closeHour: { type: Number, require: true }
 })
 
-export const RestaurantModel = mongoose.model<IRestaurant>("Restaurants", restaurantSchema)
+export const RestaurantModel = mongoose.model<IRestaurant>("restaurants", restaurantSchema)

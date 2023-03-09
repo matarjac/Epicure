@@ -1,6 +1,6 @@
 import FoodType from './FoodType'
 
-interface IDishCard{
+interface IDishCard {
     name: string,
     restaurantID?: number,
     id: number,
@@ -9,7 +9,8 @@ interface IDishCard{
     img: string,
     price?: number,
     isPopular?: boolean,
-    onClick: ()=>void
+    category?: string,
+    onClick: () => void
 }
 
 export default IDishCard;

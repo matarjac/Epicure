@@ -1,43 +1,50 @@
 import { createSlice } from "@reduxjs/toolkit";
-import finalData from "../../dataFinal.json"
+import IRestaurantCard from "../../types/interfaces/IRestaurantCard";
+
+const getAllRestaurants = fetch('http://localhost:8000/restaurants', { method: 'GET' })
+    .then(response => response.json())
+    .then((data) => { return data })
+    .catch((err) => console.log(err));
+
+const restaurantsList = await getAllRestaurants;
 
 export const restaurantsSlice = createSlice({
     name: "restaurants",
     initialState: {
-        value: finalData.restaurants,
-        chefOfTheWeek: finalData.chefOfTheWeek
+        value: restaurantsList,
+        chefOfTheWeek: 3
     },
-    reducers:{
-        filterRestaurants: (state, action) =>{
+    reducers: {
+        filterRestaurants: (state, action) => {
             const filterType = action.payload;
-            switch (filterType){
+            switch (filterType) {
                 case "all":
-                    state.value = finalData.restaurants;
+                    state.value = restaurantsList;
                     break;
                 case "new":
-                    state.value = finalData.restaurants;
+                    state.value = restaurantsList;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.isNew === true
+                        (restaurant: IRestaurantCard) => restaurant.isNew === true
                     );
                     break;
                 case "most popular":
-                    state.value = finalData.restaurants;
+                    state.value = restaurantsList;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.isPopular === true
+                        (restaurant: IRestaurantCard) => restaurant.isPopular === true
                     );
                     break;
                 case "open now":
-                    let timeNow:Date = new Date;
+                    let timeNow: Date = new Date;
                     const currentHour = timeNow.getHours();
-                    state.value = finalData.restaurants;
+                    state.value = restaurantsList;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.openHour <= currentHour && restaurant.closeHour > currentHour
+                        (restaurant: IRestaurantCard) => restaurant.openHour <= currentHour && restaurant.closeHour > currentHour
                     );
                     break;
                 case "chef of the week":
-                    state.value = finalData.restaurants;
+                    state.value = restaurantsList;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.chefID == state.chefOfTheWeek
+                        (restaurant: IRestaurantCard) => restaurant.chefID == state.chefOfTheWeek
                     );
                     break;
                 default:

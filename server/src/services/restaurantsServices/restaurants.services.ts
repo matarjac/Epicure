@@ -3,6 +3,7 @@ import { IRestaurant, RestaurantModel } from "../../model/restaurantsModel/resta
 export const getRestaurants = async () => {
     try {
         const restaurants: IRestaurant[] = await RestaurantModel.find();
+        console.log(restaurants);
         return restaurants;
     }
     catch (err) {
@@ -10,3 +11,4 @@ export const getRestaurants = async () => {
         throw err;
     }
 }
+

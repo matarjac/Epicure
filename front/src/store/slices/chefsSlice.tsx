@@ -1,35 +1,39 @@
-import {createSlice} from "@reduxjs/toolkit";
-import finalData from "../../dataFinal.json";
+import { createSlice } from "@reduxjs/toolkit";
+import axios from 'axios';
+import IChefCard from "../../types/interfaces/IChefCard";
 
-export const chefsSlice = createSlice( {
+const getAllChefs = axios.get('http://localhost:8000/chefs')
+const { data } = await getAllChefs;
+
+export const chefsSlice = createSlice({
     name: "chefs",
     initialState: {
-        value: finalData.chefs,
-        chefOfTheWeek: finalData.chefOfTheWeek
+        value: data,
+        chefOfTheWeek: 2
     },
-    reducers:{
-        filterChefs: (state, action) =>{
+    reducers: {
+        filterChefs: (state, action) => {
             const filterType = action.payload;
-            switch (filterType){
+            switch (filterType) {
                 case "all":
-                    state.value = finalData.chefs;
+                    state.value = data;
                     break;
                 case "new":
-                    state.value = finalData.chefs;
+                    state.value = data;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.isNew === true
+                        (chef:IChefCard) => chef.isNew === true
                     );
                     break;
                 case "most viewed":
-                    state.value = finalData.chefs;
+                    state.value = data;
                     state.value = state.value.filter(
-                        (restaurant) => restaurant.mostViewed === true
+                        (chef:IChefCard) => chef.mostViewed === true
                     );
                     break;
                 case "chef of the week":
                     state.value = state.value;
                     state.value = state.value.filter(
-                        (chef) => chef.id == state.chefOfTheWeek
+                        (chef:IChefCard) => chef.id == state.chefOfTheWeek
                     );
                     break;
                 default:
@@ -39,6 +43,6 @@ export const chefsSlice = createSlice( {
     }
 })
 
-export const {filterChefs} = chefsSlice.actions;
+export const { filterChefs } = chefsSlice.actions;
 export default chefsSlice.reducer;
 
