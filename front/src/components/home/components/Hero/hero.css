@@ -6,7 +6,9 @@
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 30px;
   align-items: center;
 }
 
@@ -14,6 +16,13 @@
   position: fixed;
   height: 100%;
   object-fit: contain;
+}
+
+.hello-div > span {
+  font-size: 40px;
+  color: white;
+  font-weight: 400;
+  align-self: stretch;
 }
 
 @media only screen and (max-width: 600px) {

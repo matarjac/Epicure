@@ -1,23 +1,24 @@
 import React from "react";
 import './chefOfTheWeek.css';
 import { useDispatch, useSelector } from "react-redux";
-import {filterRestaurants} from "../../../../store/slices/restaurantsSlice";
+import { filterRestaurants } from "../../../../store/slices/restaurantsSlice";
 import { useEffect } from "react";
 import { filterChefs } from "../../../../store/slices/chefsSlice";
 import IRestaurantCard from "../../../../types/interfaces/IRestaurantCard";
 import { Istore } from "../../../../types/interfaces/Istore";
 
-const ChefOfTheWeek: React.FC = ()=>{
+const ChefOfTheWeek: React.FC = () => {
+    const restaurantsData = useSelector((state: Istore) => state.restaurants.value);
+    const chefData = useSelector((state: Istore) => state.chefs.value);
     const dispatch = useDispatch();
-    const restaurantsData = useSelector((state:Istore)=> state.restaurants.value);
-    const chefData = useSelector((state:Istore) => state.chefs.value);
 
-    useEffect(()=>{
+    useEffect(() => {
         const chefOfTheWeekAction = "chef of the week"
         dispatch(filterRestaurants(chefOfTheWeekAction));
         dispatch(filterChefs(chefOfTheWeekAction));
-    },[])
+    }, [])
     const chefOfTheWeek = chefData[0];
+    console.log(chefOfTheWeek);
 
     return (
         <div id="chef-of-the-week-section">
@@ -31,10 +32,10 @@ const ChefOfTheWeek: React.FC = ()=>{
             </div>
             <p className="chef-of-the-week-titles chefs-restaurants-title">{chefOfTheWeek.name}’s Restaurants</p>
             <div id="chefs-restaurants">
-                {restaurantsData.slice(0,3).map((rest:IRestaurantCard)=>(
-                    <div className="week-restaurant-card">
-                    <img src={rest.img} alt="" />
-                    <span>{rest.name}</span>
+                {restaurantsData.slice(0, 3).map((rest: IRestaurantCard, index) => (
+                    <div key={index} className="week-restaurant-card">
+                        <img src={rest.img} alt="" />
+                        <span>{rest.name}</span>
                     </div>
                 ))}
             </div>

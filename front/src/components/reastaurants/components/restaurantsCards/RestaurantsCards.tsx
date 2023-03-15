@@ -14,7 +14,8 @@ const RestaurantsCards:React.FC = ()=>{
 
     return(
         <div id="restaurants-cards-page">
-            {restaurantsData.map((rest:IRestaurantCard)=>( <RestaurantCard 
+            {restaurantsData.map((rest:IRestaurantCard, index)=>( <RestaurantCard 
+                key={index}
                 name={rest.name}
                 img= {rest.img}
                 chef= {rest.name}

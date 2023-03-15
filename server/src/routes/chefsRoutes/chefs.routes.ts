@@ -1,8 +1,8 @@
 import express from "express";
-import { getAllChefs } from "../../controllers/chefsControllers/chefs.controllers";
+import { getAllChefs, deleteChef } from "../../controllers/chefsControllers/chefs.controllers";
 
 const router = express.Router();
 router.get("/", getAllChefs);
-
+router.delete("/delete", deleteChef);
 
 export default router;

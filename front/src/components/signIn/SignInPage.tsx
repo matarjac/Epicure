@@ -1,40 +1,101 @@
-import React, { useState, ChangeEvent } from "react";
-import {useNavigate, useNavigation} from 'react-router-dom';
+import React, { useState, ChangeEvent, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 import Navbar from "../navbar/Navbar";
 import "./signInPage.css";
+import { useSelector } from "react-redux";
+import { Istore } from "../../types/interfaces/Istore";
+import { Credentials, loggedUser } from '../../store/slices/userSlice';
+import { useDispatch } from "react-redux";
 
-const SignInPage: React.FC = ()=>{
+const SignInPage: React.FC = () => {
 
-    const [isLoginAvailable, setIsLoginAvailable] = useState(false);
-    const navigation = useNavigate();
-    const handleInputChange = (e:ChangeEvent<HTMLInputElement>)=>{
-        console.log(e)
+    // const [isLoginAvailable, setIsLoginAvailable] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const emptyInputs = () => {
+        setEmail('');
+        setPassword('');
+    }
+    const handleEmailInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
     }
 
-    return(
+    useEffect(() => {
+        const user = sessionStorage.getItem("user");
+        user ? setIsLoggedIn(true) : setIsLoggedIn(false);
+    }, [])
+
+    const handleLogIn = async () => {
+        const credentials: Credentials = {
+            email: email,
+            password: password
+        }
+        try {
+            const { data } = await axios.post('http://localhost:8000/users/login', credentials)
+            const userToSave = {
+                firstName: data.firstName,
+                lastName: data.lastName,
+                userName: data.userName,
+                userEmail: data.email
+            }
+            const userJSON = JSON.stringify(userToSave);
+            sessionStorage.setItem("user", userJSON);
+            dispatch(loggedUser(userToSave));
+            navigate("/")
+        }
+        catch (err: any) {
+            console.log(err)
+            alert(err.response.data);
+            emptyInputs();
+        }
+    }
+
+    const handleLogOut =  () =>{
+        sessionStorage.removeItem("user");
+        window.location.reload();
+    }
+
+    return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className='input-containers' id="sign-in-form-container">
-                <h1>SIGN IN</h1>
-                <div id="inputs-sign-in-container">
-                    <input type="text" placeholder="Email address" onChange={(e)=>handleInputChange(e)}/>
-                    <input type="text" placeholder="Password" onChange={(e)=>handleInputChange(e)}/>
-                </div>
-                <div id="log-in-buttons-container">
-                    <button id="log-in-btn">LOGIN</button>
-                    <button id="forgot-password-btn">Forgot password?</button>
-                </div>
-                 <div id="hr-line-div-sign-in">
-                     <span>or</span>
-                 </div>
-                 <button id="sign-up-btn" onClick={()=>navigation("/sign-up")}>SIGN UP</button>
+                {!isLoggedIn ?
+                    <>
+                        <h1>SIGN IN</h1>
+
+                        <div id="inputs-sign-in-container">
+                            <input type="text" placeholder="Email address" value={email} onChange={(e) => handleEmailInputChange(e)} />
+                            <input type="password" placeholder="Password" value={password} onChange={(e) => handlePasswordInputChange(e)} />
+                        </div>
+                        <div id="log-in-buttons-container">
+                            <button id="log-in-btn" onClick={handleLogIn}>LOGIN</button>
+                            <button id="forgot-password-btn">Forgot password?</button>
+                        </div>
+                        <div id="hr-line-div-sign-in">
+                            <span>or</span>
+                        </div>
+                        <button id="sign-up-btn" onClick={() => navigate("/sign-up")}>SIGN UP</button>
+                    </>
+                    :
+                    <>
+                    <div className="already-signed-div">
+                        <h1>You already signed in</h1>
+                        <button className="log-out" onClick={handleLogOut}>Log Out</button>
+                    </div>
+                    </>}
+
             </div>
         </>
     )
 }
 
 export default SignInPage;
-
-function setState(arg0: boolean): [any, any] {
-    throw new Error("Function not implemented.");
-}

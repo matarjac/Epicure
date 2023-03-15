@@ -1,8 +1,11 @@
 #sign-in-form-container {
   display: flex;
   flex-direction: column;
-  padding: 0 20%;
+  margin: 3% 25% 10% 25%;
+  padding-top: 40px;
+  padding-bottom: 40px;
   align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #inputs-sign-in-container {
@@ -92,4 +95,30 @@
   letter-spacing: 2.67px;
   text-transform: uppercase;
   color: #000000;
+}
+
+.log-out {
+  box-sizing: border-box;
+  align-items: center;
+  padding: 5px 15px;
+  gap: 10px;
+  width: 206px;
+  height: 48px;
+  border: 1px solid rgb(231, 94, 94);
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 2.67px;
+  text-transform: uppercase;
+  color: rgb(231, 94, 94);
+}
+
+.already-signed-div {
+  width: 80%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

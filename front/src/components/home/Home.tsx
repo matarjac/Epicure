@@ -3,17 +3,20 @@ import { useNavigate, useNavigation } from "react-router-dom";
 import './home.css';
 import Navbar from "../navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import { useDispatch } from "react-redux";
 import PopularRestaurants from './components/popularRestaurants/PoppularRestaurants';
 import PopularDishes from "./components/popularDishes/PopularDishes";
 import MeaningOfIcons from "./components/meaningOfIcons/MeaningOfIcons";
 import ChefOfTheWeek from "./components/chefOfTheWeek/ChefOfTheWeek";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Footer from "./components/footer/Footer";
+import HelloModal from "./components/HelloModal/HelloModal";
 
 const Home:React.FC = ()=>{
     return(
         <div id="homePage">
             <Navbar/>
+            <HelloModal/>
             <Hero/>
             <PopularRestaurants/>
             <PopularDishes/>

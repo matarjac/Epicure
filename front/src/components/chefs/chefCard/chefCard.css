@@ -26,3 +26,8 @@
   bottom: 0px;
   transform: translate(-50%, 0);
 }
+
+.close-chef-btn {
+  position: absolute;
+  transform: translate(-100%, 0);
+}

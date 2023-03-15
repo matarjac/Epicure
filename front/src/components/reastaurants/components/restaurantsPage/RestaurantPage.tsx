@@ -60,8 +60,9 @@ const RestaurantPage: React.FC = ()=>{
                         <button className="dishes-category" onClick={()=>handleFilter("dinner")}>Dinner</button>
                     </div>
                 <div id="dishes-menu-cards-container">
-                    {currentDishes.length>=1 ? currentDishes.map((dish:IDishCard)=>(
+                    {currentDishes.length>=1 ? currentDishes.map((dish:IDishCard, index)=>(
                         <DishMenuCard 
+                        key={index}
                         name={dish.name}
                         img={dish.img}
                         ingredients = {dish.ingredients}

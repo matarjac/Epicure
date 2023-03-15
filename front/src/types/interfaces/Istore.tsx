@@ -1,23 +1,25 @@
 import IChefCard from "./IChefCard"
 import IRestaurantCard from "./IRestaurantCard";
 import IDishCard from "./IDishCard";
+import IUserState from "./IUserState";
 
-export interface Istore{
+export interface Istore {
     restaurants: Irestaurant,
-    chefs: Ichef,
-    dishes: Idish    
+    chefs: IChef,
+    dishes: Idish,
+    user: IUserState
 }
 
-interface Ichef{
-    value: IChefCard[],
-    chefOfTheWeek: number
+interface IChef {
+    value: IChefCard[] ,
+    chefOfTheWeek: string
 }
 
-interface Idish{
+interface Idish {
     value: IDishCard[]
 }
 
-interface Irestaurant{
+interface Irestaurant {
     value: IRestaurantCard[],
     chefOfTheWeek: number
 }

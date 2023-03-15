@@ -2,7 +2,7 @@ import React from "react";
 import "./chefsFilters.css";
 import { useState, useEffect } from "react";
 import {useDispatch} from 'react-redux';
-import {filterChefs} from "../../../store/slices/chefsSlice";
+import { filterChefs } from "../../../store/slices/chefsSlice";
 
 
 const ChefsFilters:React.FC = ()=>{
@@ -12,8 +12,8 @@ const ChefsFilters:React.FC = ()=>{
     useEffect(()=>{
         setFilter("all");
         dispatch(filterChefs(filter));
+        console.log('alled');
     }, [])
-    
     
     const handleClickAll = ()=>{
         setFilter("all");

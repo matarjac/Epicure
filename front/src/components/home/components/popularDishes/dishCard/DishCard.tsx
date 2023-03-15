@@ -12,8 +12,8 @@ const DishCard: React.FC<IDishCard> = (props:IDishCard) => {
               <span id="dish-name">{data.name}</span>
               <div id="food-type-icons-container">
 
-              {data.foodType.map((type:string)=>{
-                  return <img id="type" src={"./Assets/food-type/"+type+"-icon.svg"} alt="" />
+              {data.foodType.map((type:string, index)=>{
+                  return <img key={index} id="type" src={"./Assets/food-type/"+type+"-icon.svg"} alt="" />
               })}
               </div>
               <span id="dish-ingredients">{data.ingredients}</span>

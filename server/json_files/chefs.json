@@ -1,16 +1,14 @@
 [
     {
         "name": "Assaf Granit",
-        "id": 1,
         "isChefOfTheWeek": false,
-        "img": "https://ynet-images1.yit.co.il/picserver5/crop_images/2021/01/18/H1cpSz7100/H1cpSz7100_0_0_1024_682_0_x-large.jpg",
+        "img": "https://plus.unsplash.com/premium_photo-1661778021952-65997d03b2b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
         "isNew": true,
         "mostViewed": true
         
     },
     {
         "name": "Eyal Shani",
-        "id": 2,
         "isChefOfTheWeek": false,
         "img": "https://cdn.vox-cdn.com/thumbor/P85cCLzV2qbWG_3zdSxLSc1Hds8=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23649125/eyal_shani_miznon.jpeg",
         "isNew": true,
@@ -18,7 +16,6 @@
     },
     {
         "name": "Aviv Moshe",
-        "id": 3,
         "isChefOfTheWeek": false,
         "img": "https://upload.wikimedia.org/wikipedia/commons/1/10/%D7%A9%D7%A3_%D7%90%D7%91%D7%99%D7%91_%D7%9E%D7%A9%D7%94.jpg",
         "isNew": true,
@@ -26,7 +23,6 @@
     },
     {
         "name": "Omer Miller",
-        "id": 4,
         "isChefOfTheWeek": false,
         "img": "http://bulthaupculinary.com/sites/default/files/shef-images/shef_omer_large.jpg",
         "isNew": false,
@@ -34,7 +30,6 @@
     },
     {
         "name": "Meir Adoni",
-        "id": 5,
         "isChefOfTheWeek": false,
         "img": "http://visionsgourmandes.com/wp-content/uploads/2015/03/Chef-Meir-Adoni1.jpg",
         "isNew": true,
@@ -60,7 +55,7 @@
         "name": "Yossi Shitrit",
         "id": 8,
         "isChefOfTheWeek": true,
-        "img": "https://ynet-images1.yit.co.il/picserver5/wcm_upload/2021/07/14/SkGT4gchau/Yossi_Shitrit_with_giant_doner_kebab__foto_Ilya_Melnikov.jpg",
+        "img": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
         "isNew": false,
         "isPopular": false,
         "mostViewed": false

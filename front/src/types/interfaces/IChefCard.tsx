@@ -1,6 +1,7 @@
 interface IChefCard{
     name: string,
-    id?: number,
+    id: number,
+    _id: string,
     isChefOfTheWeek?: boolean,
     img: string,
     isNew?: boolean,

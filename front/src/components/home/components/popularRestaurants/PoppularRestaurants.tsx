@@ -18,8 +18,8 @@ const PopularRestaurants: React.FC = () => {
           <div className="populars-container">
               <h2>popular restaurant in epicure:</h2>
               <div className="popular-cards-container">
-                {restaurantsData.slice(0,3).map((item:IRestaurantCard)=>{
-                    return <RestaurantCard img={item.img} name={item.name} chef={item.chef} rating={item.rating} location="/restaurants/" id={item.id}/>
+                {restaurantsData.slice(0,3).map((item:IRestaurantCard,index)=>{
+                    return <RestaurantCard key={index} img={item.img} name={item.name} chef={item.chef} rating={item.rating} location="/restaurants/" id={item.id}/>
                 })}
                 </div>
                 <button id="all-restaurants-btn">All Restaurants {'>>'}</button>

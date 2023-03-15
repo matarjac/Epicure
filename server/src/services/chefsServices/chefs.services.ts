@@ -12,3 +12,13 @@ export const getChefs = async () => {
     }
 }
 
+export const deleteChefByID = async (id: { id: string }) => {
+    try {
+        await ChefModel.findByIdAndDelete(id);
+    }
+    catch (err) {
+        console.log(err);
+        throw err;
+    }
+}
+

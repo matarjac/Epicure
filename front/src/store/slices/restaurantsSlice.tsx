@@ -12,7 +12,7 @@ export const restaurantsSlice = createSlice({
     name: "restaurants",
     initialState: {
         value: restaurantsList,
-        chefOfTheWeek: 3
+        chefOfTheWeek: "Assaf Granit"
     },
     reducers: {
         filterRestaurants: (state, action) => {
@@ -44,7 +44,7 @@ export const restaurantsSlice = createSlice({
                 case "chef of the week":
                     state.value = restaurantsList;
                     state.value = state.value.filter(
-                        (restaurant: IRestaurantCard) => restaurant.chefID == state.chefOfTheWeek
+                        (restaurant: IRestaurantCard) => restaurant.chef == state.chefOfTheWeek
                     );
                     break;
                 default:
