@@ -11,7 +11,10 @@ export interface ICard {
     openHour?: 16,
     closeHour?: 24,
     foodType?:string[]
-    onClick?: void
+    onClick?: void,
+    isCloseable?: boolean,
+    dbid: string,
+    filterRestaurant: (id:string)=>void
 }
 
 export default ICard;

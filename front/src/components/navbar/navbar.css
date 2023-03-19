@@ -145,3 +145,11 @@ form {
     display: inline;
   }
 }
+
+.order-cart-container {
+  position: absolute;
+  background-color: white;
+  height: 400px;
+  width: 300px;
+  right: 20px;
+}

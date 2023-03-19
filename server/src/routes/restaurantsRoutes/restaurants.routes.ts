@@ -4,4 +4,5 @@ import { getAllRestaurants } from "../../controllers/restaurantsControllers/rest
 const router = express.Router();
 router.get("/", getAllRestaurants);
 
+
 export default router;

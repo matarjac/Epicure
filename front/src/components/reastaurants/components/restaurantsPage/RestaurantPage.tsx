@@ -10,74 +10,74 @@ import Footer from "../../../home/components/footer/Footer";
 import { filterDishes } from "../../../../store/slices/dishesSlice";
 import DishMenuCard from "./dishes/DishMenuCard";
 import IDishCard from "../../../../types/interfaces/IDishCard";
-import ICard from "../../../../types/interfaces/ICard";
 import ModalDishBox from "./dishes/ModalDishBox/ModalDishBox";
+import IDish from "../../../../types/interfaces/mainInterfaces/IDish";
 
-const RestaurantPage: React.FC = ()=>{
-    const { id } = useParams();
-    const restaurantsData = useSelector((state:Istore)=>state.restaurants.value);
-    const dishesData = useSelector((state:Istore)=>state.dishes.value);
+const RestaurantPage: React.FC = () => {
+    const {id = ''} = useParams();
+    const restaurantsData = useSelector((state: Istore) => state.restaurants.value);
+    const dishesData = useSelector((state: Istore) => state.dishes.value);
     const dispatch = useDispatch();
     const now = new Date();
-    const currentHour = now.getHours(); 
+    const currentHour = now.getHours();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(filterRestaurants('all'));
         dispatch(filterDishes('all'));
-
     }, [])
-    const currentRest = restaurantsData.filter((rest)=>rest.id==id)[0];
-    const currentDishes = dishesData.filter((dish)=>dish.restaurantID==id);
+    
+    const currentRest = restaurantsData.filter((rest) => rest.restaurantNumber == +id)[0];
+    const currentDishes = dishesData.filter((dish) => dish.restaurantNumber == +id);
     const openningHour: number | undefined = currentRest.openHour;
-    const isOpen: string = currentHour>=openningHour ? "Open now" : "Close";
+    const isOpen: string = currentHour >= openningHour ? "Open now" : "Close";
 
-    const handleFilter = (category:string)=>{
+    const handleFilter = (category: string) => {
         dispatch(filterDishes(category));
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalIDDish, setModalIDDish] = useState<number>(0);
 
-    const handleModal = (id:number)=>{
+    const handleModal = (id: number) => {
         setModalIDDish(id);
         setIsModalOpen(true);
-        console.log(modalIDDish);
+        // console.log(modalIDDish);
     }
 
-    return(
+    return (
         <>
-            <Navbar/>
-                <div className="restaurant-page">
-                    <div id="restaurant-details-hero">
-                        <img id="rest-hero-img" src={currentRest.img} alt="" />
-                        <h1 id="restaurant-page-name">{currentRest.name}</h1>
-                        <span id="chef-name">{currentRest.chef}</span>
-                        <span id="open-status"><img src="../Assets/clock.svg" alt="" />{isOpen}</span>
-                    </div>
-                    <div id="dishes-category-buttons-container">
-                        <button className="dishes-category" onClick={()=>handleFilter("breakfast")}>Breakfast</button>
-                        <button className="dishes-category" onClick={()=>handleFilter("launch")}>Launch</button>
-                        <button className="dishes-category" onClick={()=>handleFilter("dinner")}>Dinner</button>
-                    </div>
+            <Navbar />
+            <div className="restaurant-page">
+                <div id="restaurant-details-hero">
+                    <img id="rest-hero-img" src={currentRest.img} alt="" />
+                    <h1 id="restaurant-page-name">{currentRest.name}</h1>
+                    <span id="chef-name">{currentRest.chef}</span>
+                    <span id="open-status"><img src="../Assets/clock.svg" alt="" />{isOpen}</span>
+                </div>
+                <div id="dishes-category-buttons-container">
+                    <button className="dishes-category" onClick={() => handleFilter("breakfast")}>Breakfast</button>
+                    <button className="dishes-category" onClick={() => handleFilter("launch")}>Launch</button>
+                    <button className="dishes-category" onClick={() => handleFilter("dinner")}>Dinner</button>
+                </div>
                 <div id="dishes-menu-cards-container">
-                    {currentDishes.length>=1 ? currentDishes.map((dish:IDishCard, index)=>(
-                        <DishMenuCard 
-                        key={index}
-                        name={dish.name}
-                        img={dish.img}
-                        ingredients = {dish.ingredients}
-                        foodType={dish.foodType}
-                        price={dish.price}
-                        id={dish.id}
-                        onClick={()=>handleModal(dish.id)}/>
+                    {currentDishes.length >= 1 ? currentDishes.map((dish: IDish, index) => (
+                        <DishMenuCard
+                            key={index}
+                            name={dish.name}
+                            img={dish.img}
+                            ingredients={dish.ingredients}
+                            foodType={dish.foodType}
+                            price={dish.price}
+                            dishNumber={dish.dishNumber}
+                            onClick={() => handleModal(dish.dishNumber)} />
                     ))
-                    :"No available dishes"}
+                        : "No available dishes"}
                 </div>
                 <div>
-                    <ModalDishBox id={modalIDDish} isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)}/>
+                    <ModalDishBox id={modalIDDish} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
                 </div>
-                </div>
-            <Footer/>
+            </div>
+            <Footer />
         </>
     )
 }

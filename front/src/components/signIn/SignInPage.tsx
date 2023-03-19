@@ -41,14 +41,20 @@ const SignInPage: React.FC = () => {
         }
         try {
             const { data } = await axios.post('http://localhost:8000/users/login', credentials)
+            console.log("user>>>", data)
             const userToSave = {
-                firstName: data.firstName,
-                lastName: data.lastName,
-                userName: data.userName,
-                userEmail: data.email
+                firstName: data.user.firstName,
+                lastName: data.user.lastName,
+                userName: data.user.serName,
+                userEmail: data.user.email
+            }
+            const tokenToSave = {
+                token: data.user.token
             }
             const userJSON = JSON.stringify(userToSave);
+            const userTokenJSON = JSON.stringify(tokenToSave);
             sessionStorage.setItem("user", userJSON);
+            sessionStorage.setItem('token', userTokenJSON);
             dispatch(loggedUser(userToSave));
             navigate("/")
         }
@@ -59,7 +65,7 @@ const SignInPage: React.FC = () => {
         }
     }
 
-    const handleLogOut =  () =>{
+    const handleLogOut = () => {
         sessionStorage.removeItem("user");
         window.location.reload();
     }
@@ -87,10 +93,10 @@ const SignInPage: React.FC = () => {
                     </>
                     :
                     <>
-                    <div className="already-signed-div">
-                        <h1>You already signed in</h1>
-                        <button className="log-out" onClick={handleLogOut}>Log Out</button>
-                    </div>
+                        <div className="already-signed-div">
+                            <h1>You already signed in</h1>
+                            <button className="log-out" onClick={handleLogOut}>Log Out</button>
+                        </div>
                     </>}
 
             </div>

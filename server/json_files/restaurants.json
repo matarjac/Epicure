@@ -2,7 +2,7 @@
     {
         "img": "https://images.unsplash.com/photo-1611765083444-a3ce30f1c885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
         "name": "Luchiano",
-        "id": 1,
+        "restaurantNumber": 1,
         "chef": "Meir Adoni",
         "rating": 3,
         "chefID": 5,
@@ -15,7 +15,7 @@
     {
         "img": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
         "name": "Hasalon",
-        "id": 2,
+        "restaurantNumber": 2,
         "chef": "Eyal Shani",
         "rating": 5,
         "chefID": 2,
@@ -28,7 +28,7 @@
     {
         "img": "https://imageproxy.wolt.com/venue/5e6905a759fe70f82a8016ef/8f18b1a8-63ae-11ea-980e-0a58647cdb07_yaelitz-14.jpg",
         "name": "Hamiznon",
-        "id": 3,
+        "restaurantNumber": 3,
         "chef": "Eyal Shani",
         "rating": 4,
         "chefID": 2,
@@ -42,7 +42,7 @@
     {
         "img": "https://www.mashya.co.il/wp-content/uploads/2021/08/KARELA-5-scaled.jpg",
         "name": "Mashya",
-        "id": 4,
+        "restaurantNumber": 4,
         "chef": "Yossi Shitrit",
         "rating": 3,
         "chefID": 5,
@@ -55,7 +55,7 @@
     {
         "img": "https://res.cloudinary.com/dqdq2mu2e/image/upload/v1/assafgranit/restaurants/mahne_bg_3x.jpg?v=08-03-2020",
         "name": "Shabur",
-        "id": 5,
+        "restaurantNumber": 5,
         "chef": "Assaf Granit",
         "rating": 5,
         "chefID": 1,
@@ -67,7 +67,7 @@
     },
     {
         "img": "https://img.mako.co.il/2021/03/04/salat_autoOrient_i.jpg",
-        "id": 6,
+        "restaurantNumber": 6,
         "name": "Mahne Yehuda",
         "chef": "Assaf Granit",
         "rating": 5,

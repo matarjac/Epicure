@@ -1,27 +1,33 @@
 import React from "react";
 import "./chefCard.css";
 import axios from 'axios';
-import IChefCard from "../../../types/interfaces/IChefCard";
-import ChefsCards from "../chefsCards/ChefsCards";
-import { filterChefs } from "../../../store/slices/chefsSlice";
 
-interface Ichef {
+interface IChefCard {
     name: string,
     img: string,
     id: string,
     filterChefs: (id: string) => void
 }
 
-const ChefCard: React.FC<Ichef> = (props: Ichef) => {
+const ChefCard: React.FC<IChefCard> = (props: IChefCard) => {
+
+    const token = sessionStorage.getItem('token');
+    const parsedToken = token ? JSON.parse(token) : '';
+    const axiosInstance = axios.create({
+        baseURL: 'http://localhost:8000',
+        headers: {
+            Authorization: `Bearer ${parsedToken.token}`,
+        },
+    });
 
     const handleDeleteChef = async (id: string) => {
         const body = { id: id };
         try {
-            const response = await axios.delete(`http://localhost:8000/chefs/delete`, { data: body });
+            await axiosInstance.delete('/chefs/delete', { data: body });
             props.filterChefs(id);
         }
-        catch (err) {
-            console.log(err);
+        catch (error: any) {
+            alert(error.response.data.message);
         }
     }
     return (

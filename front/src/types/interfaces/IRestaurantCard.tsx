@@ -1,15 +1,13 @@
 export interface IRestaurantCard {
-    img: string,
+    id: string,
+    restaurantNumber:number,
+    img:string,
+    location: string,
     name: string,
-    chef?: string,
+    chef:string,
     rating: number,
-    id?: number,
-    chefID?:number,
-    isPopular?: boolean,
-    isNew?: boolean,
-    dishes?: number[],
-    openHour: number,
-    closeHour: number
+    isCloseable: boolean,
+    filterRestaurant?: (id:string)=>void 
 }
 
 export default IRestaurantCard;

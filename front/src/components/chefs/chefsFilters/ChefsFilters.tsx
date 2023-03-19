@@ -12,7 +12,6 @@ const ChefsFilters:React.FC = ()=>{
     useEffect(()=>{
         setFilter("all");
         dispatch(filterChefs(filter));
-        console.log('alled');
     }, [])
     
     const handleClickAll = ()=>{

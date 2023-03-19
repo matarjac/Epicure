@@ -26,18 +26,19 @@ export const addNewUser = async (req: Request, res: Response) => {
             lastName,
             userName,
             email: email.toLowerCase(),
-            password: encrypted_password
+            password: encrypted_password,
+            isAdmin: false
         });
 
-        const token = jwt.sign(
-            { user_id: user._id, email },
-            process.env.TOKEN_KEY,
-            {
-                expiresIn: "2h",
-            }
-        );
-        user.token = token;
-        user.save()
+        // const token = jwt.sign(
+        //     { user_id: user._id, email, isAdmin:false },
+        //     process.env.TOKEN_KEY,
+        //     {
+        //         expiresIn: "2h",
+        //     }
+        // );
+        // user.token = token;
+        // user.save()
 
         return res
             .status(200)
@@ -62,7 +63,7 @@ export const logInUser = async (req: Request, res: Response) => {
 
         if (user && await bcrypt.compare(password, user.password)) {
             const token = jwt.sign(
-                { user_id: user._id, email },
+                { user_id: user._id, email, isAdmin: user.isAdmin },
                 process.env.TOKEN_KEY,
                 {
                     expiresIn: "2h",
@@ -70,8 +71,7 @@ export const logInUser = async (req: Request, res: Response) => {
             );
 
             user.token = token;
-
-            return res.status(200).json(user);
+            return res.status(200).json({ user });
         }
         res.status(400).send("Invalid Credentials");
     }

@@ -1,25 +1,27 @@
-import IChefCard from "./IChefCard"
-import IRestaurantCard from "./IRestaurantCard";
-import IDishCard from "./IDishCard";
+import IChef from "./mainInterfaces/IChef";
+import IRestaurant from "./mainInterfaces/IRestaurant";
+import IDish from "./mainInterfaces/IDish";
 import IUserState from "./IUserState";
+import { IOrderState } from "../../store/slices/orderSlice";
 
 export interface Istore {
-    restaurants: Irestaurant,
-    chefs: IChef,
-    dishes: Idish,
-    user: IUserState
+    restaurants: IRestaurantState,
+    chefs: IChefState,
+    dishes: IDishState,
+    user: IUserState,
+    order: IOrderState
 }
 
-interface IChef {
-    value: IChefCard[] ,
+interface IChefState {
+    value: IChef[] ,
     chefOfTheWeek: string
 }
 
-interface Idish {
-    value: IDishCard[]
+interface IDishState {
+    value: IDish[]
 }
 
-interface Irestaurant {
-    value: IRestaurantCard[],
-    chefOfTheWeek: number
+interface IRestaurantState {
+    value: IRestaurant[],
+    chefOfTheWeek: string
 }

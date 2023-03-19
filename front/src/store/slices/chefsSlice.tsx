@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
-import IChefCard from "../../types/interfaces/IChefCard";
+import IChef from "../../types/interfaces/mainInterfaces/IChef";
 
 const getAllChefs = axios.get('http://localhost:8000/chefs');
 const { data } = await getAllChefs;
@@ -22,19 +22,19 @@ export const chefsSlice = createSlice({
                 case "new":
                     state.value = data;
                     state.value = state.value.filter(
-                        (chef: IChefCard) => chef.isNew === true
+                        (chef: IChef) => chef.isNew === true
                     );
                     break;
                 case "most viewed":
                     state.value = data;
                     state.value = state.value.filter(
-                        (chef: IChefCard) => chef.mostViewed === true
+                        (chef: IChef) => chef.mostViewed === true
                     );
                     break;
                 case "chef of the week":
                     state.value = data;
                     state.value = state.value.filter(
-                        (chef: IChefCard) => chef.name === state.chefOfTheWeek
+                        (chef: IChef) => chef.name === state.chefOfTheWeek
                     );
                     break;
                 default:

@@ -1,9 +1,7 @@
-import FoodType from './FoodType'
-
 interface IDishCard {
     name: string,
     restaurantID?: number,
-    id: number,
+    dishNumber: number,
     ingredients: string,
     foodType: string[],
     img: string,
