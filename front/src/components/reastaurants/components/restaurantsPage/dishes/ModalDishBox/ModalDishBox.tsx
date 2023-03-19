@@ -45,6 +45,7 @@ const ModalDishBox: React.FC<IModalProps> = (props: IModalProps) => {
 
     const dishData = dishesData.filter((dish) => dish.dishNumber === props.id)[0];
 
+    
     return (
         <>
             {props.isOpen &&
